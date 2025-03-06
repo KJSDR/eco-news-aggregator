@@ -7,14 +7,16 @@ A web application that aggregates environmental news articles from BBC News and 
 - Backend powered by FastAPI and PostgreSQL.
 - Frontend built with React and styled using Tailwind CSS.
 ## 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/eco-news.git cd eco-news
+- git clone https://github.com/yourusername/eco-news.git 
+- cd eco-news
 
 ## 2️⃣ Set Up the Backend
 ### 📌 Create and Activate Virtual Environment
-cd backend python3 -m venv venv source venv/bin/activate # On Windows use: venv\Scripts\activate
+- cd backend python3 -m venv venv source venv/bin/activate # 
+- On Windows use: venv\Scripts\activate
 
 ### 📌 Install Dependencies
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### 📌 Set Up PostgreSQL Database
 ```
@@ -29,12 +31,11 @@ CREATE TABLE articles (
 );
 ```
 ### 📌 Start Backend Server
-uvicorn main:app --reload
+- uvicorn main:app --reload
 
 3️⃣ Set Up the Frontend
 ### 📌 Install Dependencies
-- cd ../frontend 
 - npm install
 
 ### 📌 Start React App
-npm start
+- npm start
