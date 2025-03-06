@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import backgroundImage from "./background.jpg";
 
 function App() {
     const [articles, setArticles] = useState([]);
@@ -11,17 +12,44 @@ function App() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-green-700 p-6 flex flex-col items-left">
-            <h1 className="text-3xl font-bold text-white mb-4 w-full text-center">Eco-News Aggregator</h1>
-            <ul className="space-y-3 w-full max-w-md">
-                {articles.map((article, index) => (
-                    <li key={index} className="bg-white p-4 rounded shadow hover:bg-green-100 transition-colors flex justify-between items-center">
-                        <a href={article.link} target="_blank" rel="noopener noreferrer" className="text-green-800 hover:text-green-600">
-                            {article.title}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+        <div 
+            className="relative min-h-screen flex flex-col items-center p-4"
+            style={{ 
+                backgroundImage: `url(${backgroundImage})`, 
+                backgroundSize: "cover", 
+                backgroundPosition: "center" 
+            }}
+        >
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+            {/* Content */}
+            <div className="relative z-10 text-center w-full">
+                <h1 className="text-4xl font-bold text-green-400 mb-6">Eco-News Aggregator</h1>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {articles.map((article, index) => (
+                        <div key={index} className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center ">
+                            {/* Source Logo */}
+                            <img 
+                                src={`http://127.0.0.1:8000${article.source_logo}`} 
+                                alt={article.source_name} 
+                                className="h-12 w-auto mb-2"
+                            />
+                            
+                            {/* Article Title */}
+                            <a 
+                                href={article.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-lg font-semibold text-gray-800 text-center hover:underline"
+                            >
+                                {article.title}
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }
