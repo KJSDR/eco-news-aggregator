@@ -2,10 +2,10 @@
 A web application that aggregates environmental news articles from BBC News and National Geographic and presents them in a visually appealing format.
 
 ### 📌 Features
-Fetches the latest environmental news from BBC News and National Geographic.
-Displays news articles in a grid layout with source logos.
-Backend powered by FastAPI and PostgreSQL.
-Frontend built with React and styled using Tailwind CSS.
+- Fetches the latest environmental news from BBC News and National Geographic.
+- Displays news articles in a grid layout with source logos.
+- Backend powered by FastAPI and PostgreSQL.
+- Frontend built with React and styled using Tailwind CSS.
 ## 1️⃣ Clone the Repository
 git clone https://github.com/yourusername/eco-news.git cd eco-news
 
@@ -33,7 +33,8 @@ uvicorn main:app --reload
 
 3️⃣ Set Up the Frontend
 ### 📌 Install Dependencies
-cd ../frontend npm install
+- cd ../frontend 
+- npm install
 
 ### 📌 Start React App
 npm start
